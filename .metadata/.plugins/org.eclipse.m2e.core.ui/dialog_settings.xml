@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\Users\leu\Desktop\JavaRestAssured\Test"/>
 			<item value="C:\Users\leu\Desktop\JavaRestAssured\ServeRest"/>
+			<item value="C:\Users\leu\Desktop\JavaRestAssured\Test"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

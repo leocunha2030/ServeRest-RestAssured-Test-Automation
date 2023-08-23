@@ -1,0 +1,13 @@
+testProdutos\postProduct.class
+testProdutos\putProduct.class
+Data\Dados.class
+testCarrinhos\postCart.class
+testUsuarios\postUser.class
+testLogin\postLogin.class
+testUsuarios\getUser.class
+testCarrinhos\deleteCart.class
+testProdutos\getProduct.class
+testCarrinhos\getCart.class
+testUsuarios\deleteUser.class
+testUsuarios\putUser.class
+testProdutos\deleteProduct.class

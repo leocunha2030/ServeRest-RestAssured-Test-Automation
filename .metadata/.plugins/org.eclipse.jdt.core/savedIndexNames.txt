@@ -1,24 +1,2 @@
 INDEX VERSION 1.134+C:\Users\leu\Desktop\JavaRestAssured\ServeRest\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-4185155966.index
-383501855.index
-4270775603.index
-2594095364.index
-3685533467.index
-1621430439.index
-3413725848.index
-2847107702.index
-3146034278.index
-2067097929.index
-1577968290.index
-2525773270.index
-2770424264.index
-1657330681.index
-2802172458.index
-3117058058.index
-2685267124.index
-148731905.index
-998971680.index
-2273544641.index
-1929680009.index
-4027230941.index
