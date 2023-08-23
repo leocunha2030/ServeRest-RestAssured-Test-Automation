@@ -3,6 +3,7 @@ package testLogin;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import Data.Dados;
@@ -10,7 +11,7 @@ import io.restassured.http.ContentType;
 
 public class postLogin extends Dados{
 	
-	@Test
+	@Test 
 	public void LoginSucesso() {
 		given()
 	    .log().all()
