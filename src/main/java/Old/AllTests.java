@@ -1,3 +1,4 @@
+package Old;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -16,7 +17,7 @@ public class AllTests extends Dados{
 	}
 	//Rota Usuários
 	@Test
-	public void Cadastra_User() {
+	public void CadastraUser() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -30,7 +31,7 @@ public class AllTests extends Dados{
         
 	}
 	@Test
-	public void Cadastra_User_Repetido() {
+	public void CadastraUserRepetido() {
 
 		given()
         .log().all()
@@ -55,7 +56,7 @@ public class AllTests extends Dados{
         
 	}
 	@Test
-	public void Cadastra_User_Em_Branco() {
+	public void CadastraUserEmBranco() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -67,7 +68,7 @@ public class AllTests extends Dados{
         .statusCode(400);
 	}
 	@Test
-	public void Cadastra_User_Senha_Em_Branco() {
+	public void CadastraUserSenhaEmBranco() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -79,7 +80,7 @@ public class AllTests extends Dados{
         .statusCode(400);
 	}
 	@Test
-	public void Excluir_Usuario() {
+	public void ExcluirUsuario() {
 		ExtractableResponse<Response> response = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -102,7 +103,7 @@ public class AllTests extends Dados{
 	        .statusCode(200);
 	}
 	@Test
-	public void Nao_Exclui_User_Com_Carrinho() {
+	public void NaoExcluiUserComCarrinho() {
 		ExtractableResponse<Response> UsId = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -162,7 +163,7 @@ public class AllTests extends Dados{
     	        .statusCode(400);
 	}
 	@Test
-	public void Edita_User() {
+	public void EditaUser() {
 		
 		ExtractableResponse<Response> response = given()
                 .log().all()
@@ -189,7 +190,7 @@ public class AllTests extends Dados{
 	            .statusCode(200);
 	}
 	@Test
-	public void Editar_Usuario_Cadastro_Com_Sucesso() {
+	public void EditarUsuarioCadastroComSucesso() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -201,7 +202,7 @@ public class AllTests extends Dados{
         .statusCode(201);
 	}
 	@Test
-	public void Edita_Email_ja_Cadastrado() {
+	public void EditaEmailjaCadastrado() {
 		
 		ExtractableResponse<Response> response = given()
                 .log().all()
@@ -228,7 +229,7 @@ public class AllTests extends Dados{
 	            .statusCode(200);//BUG registrado nesta request
 	}
 	@Test
-	public void Lista_Users() {
+	public void ListaUsers() {
 			given()
 	        .log().all()
 	    .when()
@@ -237,9 +238,10 @@ public class AllTests extends Dados{
 	        .log().all()
 	        .statusCode(200);
 	}
+	//Rota User concluida 
 	//Rota Login
 	@Test
-	public void Login_Sucesso() {
+	public void LoginSucesso() {
 		given()
 	    .log().all()
 	    .contentType(ContentType.JSON)
@@ -251,7 +253,7 @@ public class AllTests extends Dados{
 	    .body("message", equalTo("Login realizado com sucesso"));
 	}
 	@Test
-	public void Login_Senha_Invalida() {
+	public void LoginSenhaInvalida() {
 		given()
 	    .log().all()
 	    .contentType(ContentType.JSON)
@@ -262,7 +264,7 @@ public class AllTests extends Dados{
 	    .log().all();;
 	}
 	@Test
-	public void Login_Email_Invalido() {
+	public void LoginEmailInvalido() {
 		given()
 	    .log().all()
 	    .contentType(ContentType.JSON)
@@ -274,7 +276,7 @@ public class AllTests extends Dados{
 	    .statusCode(401);
 	}
 	@Test
-	public void Login_Senha_Menor_Que_Cinco() {
+	public void LoginSenhaMenorQueCinco() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -297,7 +299,7 @@ public class AllTests extends Dados{
 	    .body("message", equalTo("Login realizado com sucesso"));
 	}
 	@Test
-	public void Login_Senha_Maior_Que_Dez() {
+	public void LoginSenhaMaiorQueDez() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -320,7 +322,7 @@ public class AllTests extends Dados{
 	    .body("message", equalTo("Login realizado com sucesso"));
 	}
 	@Test
-	public void Login_Senha_Em_Branco() {
+	public void LoginSenhaEmBranco() {
 		given()
 	    .log().all()
 	    .contentType(ContentType.JSON)
@@ -330,9 +332,10 @@ public class AllTests extends Dados{
 	.then()
 	    .log().all();
 	}
+	//Rota Login concluida
 	//Rota Produtos
 	@Test
-	public void Cadastra_Produto_Sucesso() {
+	public void CadastraProdutoSucesso() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -356,7 +359,7 @@ public class AllTests extends Dados{
      		    .statusCode(201);
 	}
 	@Test
-	public void Cadastra_Produto_Repetido() {
+	public void CadastraProdutoRepetido() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -391,7 +394,7 @@ public class AllTests extends Dados{
 	 		    .statusCode(400);
 	}
 	@Test
-	public void Cadastra_Produto_Token_Ausente() {
+	public void CadastraProdutoTokenAusente() {
 			given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -413,7 +416,7 @@ public class AllTests extends Dados{
      		    .statusCode(401);
 	}
 	@Test
-	public void Cadastra_Produto_No_Admin() {
+	public void CadastraProdutoNoAdmin() {
 			given()
 		        .log().all()
 		        .contentType(ContentType.JSON)
@@ -448,7 +451,7 @@ public class AllTests extends Dados{
      		    .statusCode(403);
 	}
 	@Test
-	public void Deleta_Produto_No_Carrinho() {
+	public void DeletaProdutoNoCarrinho() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -508,7 +511,7 @@ public class AllTests extends Dados{
             	.extract().statusCode();
 	}
 	@Test
-	public void Edita_Produto_No_Carrinho() {
+	public void EditaProdutoNoCarrinho() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -568,7 +571,7 @@ public class AllTests extends Dados{
 		        .statusCode(405);		
 	}
 	@Test
-	public void Edita_Alterado_Com_Sucesso() {
+	public void EditaAlteradoComSucesso() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -608,7 +611,7 @@ public class AllTests extends Dados{
 		
 	}
 	@Test
-	public void Cadastro_Com_Sucesso_Editar_Produto() {
+	public void CadastroComSucessoEditarProduto() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -631,7 +634,7 @@ public class AllTests extends Dados{
         .statusCode(201);
 	}
 	@Test
-	public void Token_Ausente_Editar_Produto() {
+	public void TokenAusenteEditarProduto() {
 			given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -653,7 +656,7 @@ public class AllTests extends Dados{
 	        .statusCode(401);
 	}
 	@Test
-	public void Editar_Produto_No_Admin() {
+	public void EditarProdutoNoAdmin() {
 			given()
 		        .log().all()
 		        .contentType(ContentType.JSON)
@@ -688,7 +691,7 @@ public class AllTests extends Dados{
      		    .statusCode(403);
 	}
 	@Test
-	public void Exclui_Produto_Com_Sucesso() {
+	public void ExcluiProdutoComSucesso() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -725,7 +728,7 @@ public class AllTests extends Dados{
         	.extract().statusCode();
 	}
 	@Test
-	public void Token_Ausente_Deleta_Produto() {
+	public void TokenAusenteDeletaProduto() {
 		String token = given()
                 .log().all()
                 .contentType(ContentType.JSON)
@@ -760,7 +763,7 @@ public class AllTests extends Dados{
         	.statusCode(401);
 	}
 	@Test
-	public void Excluir_Produto_NoAdmin() {
+	public void ExcluirProdutoNoAdmin() {
 			given()
 	        .log().all()
 	        .contentType(ContentType.JSON)
@@ -793,7 +796,7 @@ public class AllTests extends Dados{
         	.statusCode(403);
 	}
 	@Test
-	public void Listar_Produtos() {
+	public void ListarProdutos() {
 			given()
 	    	.log().all()
 	    .when()
@@ -802,9 +805,10 @@ public class AllTests extends Dados{
 	    	.log().all()
 	    	.statusCode(200);
 	}
+	//Rota Produtos Concuilda
 	//Rota Carrinhos
 	@Test
-	public void Lista_de_Carrinhos() {
+	public void ListadeCarrinhos() {
 		given()
     	.log().all()
     .when()
@@ -814,7 +818,7 @@ public class AllTests extends Dados{
     	.statusCode(200);
 	}
 	@Test
-	public void Cadastra_com_Sucesso() {
+	public void CadastracomSucesso() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -863,7 +867,7 @@ public class AllTests extends Dados{
 	 	    .statusCode(201);
 	}
 	@Test
-	public void Nao_e_permitido_mais_De_um_Carrinho() {
+	public void NaoepermitidomaisDeumCarrinho() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -923,7 +927,7 @@ public class AllTests extends Dados{
  	    .statusCode(400);
 	}
 	@Test
-	public void Token_Ausente() {
+	public void TokenAusente() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -971,7 +975,7 @@ public class AllTests extends Dados{
 	 	    .statusCode(401);
 	}
 	@Test
-	public void Carrinho_Nao_Encontrado() {
+	public void CarrinhoNaoEncontrado() {
 		given()
     	.log().all()
     .when()
@@ -981,7 +985,7 @@ public class AllTests extends Dados{
     	.statusCode(400);
 	}
 	@Test
-	public void Carrinho_Encontrado() {
+	public void CarrinhoEncontrado() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -1041,7 +1045,7 @@ public class AllTests extends Dados{
     	.statusCode(200);
 	}
 	@Test
-	public void Concluir_Compra() {
+	public void ConcluirCompra() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -1101,7 +1105,7 @@ public class AllTests extends Dados{
   	    .statusCode(200);
 	}
 	@Test
-	public void Cancelar_Compra() {
+	public void CancelarCompra() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -1161,7 +1165,7 @@ public class AllTests extends Dados{
   	    .statusCode(200);
 	}
 	@Test
-	public void Cancelar_Compra_Token_Ausente() {
+	public void CancelarCompraTokenAusente() {
 		given()
         .log().all()
         .contentType(ContentType.JSON)
@@ -1220,7 +1224,7 @@ public class AllTests extends Dados{
   	    .statusCode(401);
 	}
 	@Test
-	public void Concluir_Compra_Token_Ausente() {
+	public void ConcluirCompraTokenAusente() {
 		
 			given()
 	        .log().all()
@@ -1280,6 +1284,6 @@ public class AllTests extends Dados{
 	  	    .statusCode(401);
 		
 	}
-	
+	//Rota Carrinhos concluida
 }
 

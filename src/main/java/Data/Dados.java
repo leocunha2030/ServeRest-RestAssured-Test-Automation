@@ -11,6 +11,7 @@ public class Dados {
     protected Integer qtd;
     protected Integer idEdit;
     private static final Faker faker = new Faker();
+    protected static final String URL = "http://localhost:3000";
 
     public Dados() {
         this.firstName = faker.name().firstName();
