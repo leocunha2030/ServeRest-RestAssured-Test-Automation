@@ -8,10 +8,10 @@ Antes de executar os testes, certifique-se de ter o seguinte instalado:
 
 - [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (versão recomendada: 8 ou superior)
 - [Maven](https://maven.apache.org/download.cgi) (para gerenciamento de dependências)
+- [Allure-Framework 2.18.1](https://github.com/allure-framework/allure2/releases/tag/2.18.1)(Lembre de adicionar a pasta bin nas suas variaveis do sistema)
+Além de estar rodando a Api ServeRest em localhost.
 
-Além de estar rodando a Api da branch Api-Sicredi em localhost.
-
-- As instruções para a execução da api estão disponibilizadas junto com ela.
+- As instruções para a execução da api estão disponibilizadas [aqui](https://github.com/serverest/serverest)
 
 ## Configuração ⚙️
 
